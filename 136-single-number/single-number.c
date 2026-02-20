@@ -1,13 +1,7 @@
 int singleNumber(int* nums, int numsSize) {
-    int i,j,c;
+    int i,j,c=0;
     for(i=0;i<numsSize;i++){
-        c=0;
-        for(j=0;j<numsSize;j++){
-            if(nums[i]==nums[j])
-            c++;
-        }
-        if(c==1)
-            return nums[i];
+        c=c^nums[i];
     }
-    return -1;
+    return c;
 };
