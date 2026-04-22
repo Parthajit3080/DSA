@@ -1,18 +1,18 @@
 double myPow(double x, int n) {
-    double ans=1;
-    long binary=n;
-    if(n<0){
+    long long N=n;
+    if(N<0){
         x=1/x;
-        binary=-binary;
+        N=-N;
     }
-        
-    while(binary>0){
-        if(binary%2==1)
-            ans*=x;
-        
-        binary/=2;
-        x=x*x;
+    double sum=1;
+    while (N > 0) {
+        if (N % 2 == 1) {
+            sum *= x;
+        }
+        x *= x;
+        N /= 2;
     }
 
-    return ans;
+    
+    return sum;    
 }
